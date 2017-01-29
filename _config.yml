@@ -26,6 +26,9 @@ github_username:  jekyll
 markdown: kramdown
 gems:
   - jekyll-feed
+sass:
+  sass_dir: _sass
+  style: compressed
 exclude:
   - Gemfile
   - Gemfile.lock

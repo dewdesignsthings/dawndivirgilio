@@ -1,25 +1,338 @@
----
-layout: default
----
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-  
-  {{ content }}
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe fuuuuuck <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
-</div>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html %}
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-toggleable-md site-navbar">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto d-block">
+            <li class="nav-item active">
+              <a class="nav-link" href="#my-work">My Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-story">My Story</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row no-gutters h-100 align-items-center row-logo">
+        <div class="col col-logo-pattern left">
+          <div class="pattern"></div>
+        </div>
+        <div class="col col-logo">
+          <div class="logo">
+            {% include_relative assets/svg/logo-cutout.svg %}
+          </div>
+          <div class="tagline">
+            {% include_relative assets/svg/tagline.svg %}
+          </div>
+        </div>
+        <div class="col col-logo-pattern right">
+          <div class="pattern"></div>
+        </div>
+      </div>
+      <video loop muted autoplay class="video" poster="{{ '/assets/images/bg-video.jpg' | relative_url }}">
+        <source src="{{ '/assets/videos/video-purple-compressed.mp4' | relative_url }}" type="video/mp4">
+      </video>
+    </header>
+    <section id="my-work">
+      <h2>My Work</h2>
+      <div id="grid" data-columns>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-stardust" data-toggle="modal" data-target="#modal-stardust">
+            <img src="{{ '/assets/images/artwork/stardust.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="stardust" 
+            modalItemId="17" 
+            modalItemThumbnail="/assets/images/artwork/stardust-thumbnail.jpg" 
+            modalItemTitle="Stardust" 
+            modalItemSize="24” x 30”" 
+            modalItemMedium="Acrylic, Gold Leaf, Charcoal" 
+            modalItemPrice="300.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %}
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-architecture-hell" data-toggle="modal" data-target="#modal-architecture-hell">
+            <img src="{{ '/assets/images/artwork/architecture-hell-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="architecture-hell" 
+            modalItemId="1" 
+            modalItemThumbnail="/assets/images/artwork/architecture-hell-thumbnail.jpg" 
+            modalItemTitle="Architecture in Hell" 
+            modalItemSize="Size Unavailable" 
+            modalItemMedium="Colored Pencil, Mixed Media" 
+            modalItemPrice="150.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="true" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link"  href="#modal-artemis" data-toggle="modal" data-target="#modal-artemis">
+            <img src="{{ '/assets/images/artwork/artemis-thumbnail.jpg' | relative_url }}" class="img-fluid"> 
+          </a>
+          {% include modal-art.html 
+            modalId="artemis" 
+            modalItemId="2" 
+            modalItemThumbnail="/assets/images/artwork/artemis-thumbnail.jpg" 
+            modalItemTitle="Artemis" 
+            modalItemSize="13” x 16”" 
+            modalItemMedium="Colored Pencil" 
+            modalItemPrice="150.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-autumn" data-toggle="modal" data-target="#modal-autumn">
+            <img src="{{ '/assets/images/artwork/autumn-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="autumn" 
+            modalItemId="3" 
+            modalItemThumbnail="/assets/images/artwork/autumn-thumbnail.jpg" 
+            modalItemTitle="Autumn" 
+            modalItemSize="20” x 24”" 
+            modalItemMedium="Acrylic" 
+            modalItemPrice="250.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-vogue" data-toggle="modal" data-target="#modal-vogue">
+            <img src="{{ '/assets/images/artwork/frida-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="vogue" 
+            modalItemId="4" 
+            modalItemThumbnail="/assets/images/artwork/frida-thumbnail.jpg" 
+            modalItemTitle="VOGUE" 
+            modalItemSize="24” x 28”" 
+            modalItemMedium="Acrylic" 
+            modalItemPrice="300.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-barnyard-bastard" data-toggle="modal" data-target="#modal-barnyard-bastard">
+            <img src="{{ '/assets/images/artwork/barnyard-bastard-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="barnyard-bastard" 
+            modalItemId="5" 
+            modalItemThumbnail="/assets/images/artwork/barnyard-bastard-thumbnail.jpg" 
+            modalItemTitle="Barnyard Bastard" 
+            modalItemSize="21” x 25”" 
+            modalItemMedium="Acrylic, Gold Leaf" 
+            modalItemPrice="250.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-just-dandy" data-toggle="modal" data-target="#modal-just-dandy">
+            <img src="{{ '/assets/images/artwork/just-dandy-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="just-dandy" 
+            modalItemId="6" 
+            modalItemThumbnail="/assets/images/artwork/just-dandy-thumbnail.jpg" 
+            modalItemTitle="Just Dandy" 
+            modalItemSize="11” x 21”" 
+            modalItemMedium="Acrylic, Spray Paint" 
+            modalItemPrice="75.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-kali" data-toggle="modal" data-target="#modal-kali">
+            <img src="{{ '/assets/images/artwork/kali-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="kali" 
+            modalItemId="7" 
+            modalItemThumbnail="/assets/images/artwork/kali-thumbnail.jpg" 
+            modalItemTitle="Kali" 
+            modalItemSize="21” x 17”" 
+            modalItemMedium="Colored Pencil, Gold Leaf" 
+            modalItemPrice="175.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-land-of-lincoln" data-toggle="modal" data-target="#modal-land-of-lincoln">
+            <img src="{{ '/assets/images/artwork/land-of-lincoln-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="land-of-lincoln" 
+            modalItemId="8" 
+            modalItemThumbnail="/assets/images/artwork/land-of-lincoln-thumbnail.jpg" 
+            modalItemTitle="Land of Lincoln" 
+            modalItemSize="19” x 23”" 
+            modalItemMedium="Acrylic" 
+            modalItemPrice="225.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-medusa" data-toggle="modal" data-target="#modal-medusa">
+            <img src="{{ '/assets/images/artwork/medusa-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="medusa" 
+            modalItemId="9" 
+            modalItemThumbnail="/assets/images/artwork/medusa-thumbnail.jpg" 
+            modalItemTitle="Medusa" 
+            modalItemSize="12” x 25”" 
+            modalItemMedium="Colored Pencil" 
+            modalItemPrice="150.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-mislead-nature" data-toggle="modal" data-target="#modal-mislead-nature">
+            <img src="{{ '/assets/images/artwork/mislead-nature-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="mislead-nature" 
+            modalItemId="10" 
+            modalItemThumbnail="/assets/images/artwork/mislead-nature-thumbnail.jpg" 
+            modalItemTitle="Mislead Nature" 
+            modalItemSize="14” x 10”" 
+            modalItemMedium="Colored Pencil, Pen, Pastel" 
+            modalItemPrice="75.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-octavating-time" data-toggle="modal" data-target="#modal-octavating-time">
+            <img src="{{ '/assets/images/artwork/octavating-time-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="octavating-time" 
+            modalItemId="11" 
+            modalItemThumbnail="/assets/images/artwork/octavating-time-thumbnail.jpg" 
+            modalItemTitle="Octavating Time" 
+            modalItemSize="18” x 22”" 
+            modalItemMedium="Colored Pencil, Acrylic" 
+            modalItemPrice="314.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-papaya" data-toggle="modal" data-target="#modal-papaya">
+            <img src="{{ '/assets/images/artwork/papaya-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="papaya" 
+            modalItemId="12" 
+            modalItemThumbnail="/assets/images/artwork/papaya-thumbnail.jpg" 
+            modalItemTitle="Papaya Possesses Power" 
+            modalItemSize="12” x 12”" 
+            modalItemMedium="Acrylic" 
+            modalItemPrice="120.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %} 
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-ripe-golden" data-toggle="modal" data-target="#modal-ripe-golden">
+            <img src="{{ '/assets/images/artwork/ripe-golden-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="ripe-golden" 
+            modalItemId="13" 
+            modalItemThumbnail="/assets/images/artwork/ripe-golden-thumbnail.jpg" 
+            modalItemTitle="Ripe & Golden" 
+            modalItemSize="12” x 12”" 
+            modalItemMedium="Acrylic, Gold Leaf" 
+            modalItemPrice="120.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %}
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-shot-through-heart" data-toggle="modal" data-target="#modal-shot-through-heart">
+            <img src="{{ '/assets/images/artwork/shot-through-heart-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="shot-through-heart" 
+            modalItemId="14" 
+            modalItemThumbnail="/assets/images/artwork/shot-through-heart-thumbnail.jpg" 
+            modalItemTitle="Shot Through the Heart" 
+            modalItemSize="14” x 17”" 
+            modalItemMedium="Colored Pencil, Acrylic" 
+            modalItemPrice="200.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %}
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-slice-dice" data-toggle="modal" data-target="#modal-slice-dice">
+            <img src="{{ '/assets/images/artwork/slice-dice-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="slice-dice" 
+            modalItemId="15" 
+            modalItemThumbnail="/assets/images/artwork/slice-dice-thumbnail.jpg" 
+            modalItemTitle="Slice & Dice" 
+            modalItemSize="12” x 12”" 
+            modalItemMedium="Acrylic" 
+            modalItemPrice="120.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %}
+        </div>
+        <div class="grid-item">
+          <a class="grid-link" href="#modal-tropical-poppy" data-toggle="modal" data-target="#modal-tropical-poppy">
+            <img src="{{ '/assets/images/artwork/tropical-poppy-thumbnail.jpg' | relative_url }}" class="img-fluid">
+          </a>
+          {% include modal-art.html 
+            modalId="tropical-poppy" 
+            modalItemId="16" 
+            modalItemThumbnail="/assets/images/artwork/tropical-poppy-thumbnail.jpg" 
+            modalItemTitle="Tropical Poppy" 
+            modalItemSize="24” x 12”" 
+            modalItemMedium="Acrylic, Gold Leaf" 
+            modalItemPrice="200.00" 
+            modalItemMaxQty="1"
+            modalItemWeight="20"
+            modalItemSold="false" %}
+        </div>
+      </div>
+    </section>
+    <section id="my-story">
+      <div class="row no-gutters">
+        <div class="col-sm-5 col-story">
+          <h2>My Story</h2>
+          <p>Dawn Desirée DiVirgilio is an aspiring artist working in the Chicago and Milwaukee area. Originally from Sarasota, Florida Dawn draws inspiration from her hometown and her life experiences as she made her way to Chicago with only a suitcase and a box of paints. In November of 2005, two of her biggest influences, her mother and grandmother, passed away. She has since focused primarily on her work and coming into her own as an artist and craftsman. Today, Dawn teaches painting and wine classes at The Bottle Shop and is working to create original merchandise with her work.</p>
+        </div>
+        <div class="col-sm-7 col-story-video">
+          <video loop muted autoplay class="video" poster="{{ '/assets/images/bg-video.jpg' | relative_url }}">
+            <source src="{{ '/assets/videos/video-dawn-compressed.mp4' | relative_url }}" type="video/mp4">
+          </video>
+        </div>
+      </div>  
+    </section>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="{{ '/js/util.js' | relative_url }}"></script>
+    <script src="{{ '/js/modal.js' | relative_url }}"></script>
+    <script src="{{ '/js/home.js' | relative_url }}"></script>
+    <script src="{{ '/js/salvattore.min.js' | relative_url }}"></script>
+    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="M2UyNDFhMzMtNjRkNi00MjM3LWJhZDYtMmVlYjZlNjRkMmRiNjM2MjEyMTg4NjQwNTgyNDg2" id="snipcart"></script>    
+  </body>
+</html>

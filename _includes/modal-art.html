@@ -1,0 +1,52 @@
+<div class="modal modal-art fade" id="modal-{{ include.modalId }}" tabindex="-1" role="dialog" aria-labelledby="{{ include.modalId }}Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-vertical-align" role="document">
+    <div class="modal-content-vertical-align">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{ include.modalId }}Label">{{ include.modalItemTitle }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            {% include_relative assets/svg/close.svg %}
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col col-work-thumbnail">
+              <img src="{{ include.modalItemThumbnail }}" class="img-fluid">
+            </div>
+            <div class="col col-work-details">
+              <ul class="list-unstyled">
+                <li class="size">
+                  <span class="title">Size</title>
+                  <span class="data">{{ include.modalItemSize }}</span>
+                </li>
+                <li class="medium">
+                  <span class="title">Medium</title>
+                  <span class="data">{{ include.modalItemMedium }}</span>
+                </li>
+                <li class="price">
+                  <span class="title">Price</title>
+                  <span class="data">${{ include.modalItemPrice }}</span>
+                </li>
+              </ul>
+              <button class="snipcart-add-item btn btn-block btn-primary" 
+                data-item-id="{{ include.modalItemId }}"
+                data-item-image="{{ include.modalItemThumbnail }}"
+                data-item-name="{{ include.modalItemTitle }}"
+                data-item-price="{{ include.modalItemPrice }}"
+                data-item-weight="{{ include.modalItemWeight }}"
+                data-item-url="/"
+                data-item-description="{{ include.modalItemSize }}, {{ include.modalItemMedium }}"
+                data-item-max-quantity="{{ include.modalItemMaxQty }}" 
+                data-item-sold="{{ include.modalItemSold }}"
+                >
+                <span class="btn-title">
+                  Purchase <i class="icon icon-arrow-right">{% include_relative assets/svg/arrow-right.svg %}</i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
