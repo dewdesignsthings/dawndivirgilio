@@ -32,6 +32,7 @@ button, input, optgroup, select, textarea {
     .col-logo {
       max-width: 500px;
       min-width: 500px;
+      margin: 0 auto;
       svg {
         max-width: 100%;
         display: block;
@@ -42,6 +43,19 @@ button, input, optgroup, select, textarea {
       }
       .tagline {
         margin-top: 15px;
+      }
+    }
+  }
+  .signature {
+    width: 100px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    svg {
+      max-width: 100%;
+      path {
+        fill: white;
       }
     }
   }
@@ -310,7 +324,7 @@ button, input, optgroup, select, textarea {
       float: left; 
     }
     .size-1of3 { 
-      width: 40%; 
+      width: 33.3333%; 
     }
   }
   #my-story {
