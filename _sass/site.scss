@@ -289,6 +289,71 @@ button, input, optgroup, select, textarea {
   }
 }
 
+@media (max-width: $screen-md) {
+  .site-header {
+    .row-logo {
+      .col-logo {
+        max-width: 100%;
+        min-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    .video {
+      margin: auto;
+    }
+  }
+  #grid {
+    &[data-columns]::before {
+      content: '3 .column.size-1of3';
+    }
+    .column { 
+      float: left; 
+    }
+    .size-1of3 { 
+      width: 40%; 
+    }
+  }
+  #my-story {
+    .col-story {
+      border: 20px solid white;
+      padding: 20px;
+    }
+    .col-story-video {
+      border: 20px solid white;
+      min-height: 300px;
+      border-top: 0;
+    }
+  }
+  .modal-dialog {
+    margin: 0;
+    padding: 10px 20px;
+  }
+  .modal-art {
+    .col-work-thumbnail {
+      min-width: 100%;
+    }
+  }
+}
+@media (max-width: $screen-sm) {
+  #my-work {
+    h2 {
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  #grid {
+    &[data-columns]::before {
+      content: '1 .column.size-1of1';
+    }
+    .column { 
+      float: none;
+    }
+    .size-1of1 { 
+      width: 100%; 
+    }
+  }
+}
 @media (min-width: $screen-sm) {
   .modal-dialog-vertical-align {
     margin: 0 auto;
