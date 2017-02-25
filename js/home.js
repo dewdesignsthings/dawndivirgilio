@@ -6,3 +6,6 @@ $('.site-navbar a[href^="#"]').on('click', function(event) {
       }, 1000);
   }
 });
+$('.snipcart-add-item').on('click', function(event) {
+  $(this).closest('.modal-art').modal('hide')
+});
