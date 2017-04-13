@@ -38,6 +38,63 @@
         {% include_relative assets/svg/signature.svg %}
       </div>
     </header>
+    <section id="the-mug">
+      <div class="background"></div>
+      <div class="container-fluid">
+        <h2 class="tagline"><span class="title">Guaranteed to make coffee taste better.</span></h2>
+        <div class="row no-gutters">
+          <div class="col-12 col-product">
+            <div class="row no-gutters">
+              <div class="col-thumbnail m-auto">
+                <div class="thumbnail">
+                  <div class="callout">
+                    <span class="price">
+                      Only<br> $14.99!
+                    </span>
+                  </div>
+                  <img src="{{ '/assets/images/mug-cropped.png' | relative_url }}" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-md-12 col-lg col-details">
+                <h4 class="product-name">The Mug <small>by Dawn DiVirgilio</small></h4>
+                <div class="product-description">
+                  <p>It doesn’t matter what you put in it, as long as you drink it out of this.</p>
+                </div>
+                <div class="product-btn">
+                    <button class="snipcart-add-item btn btn-block btn-primary" 
+                      data-item-id="the-mug"
+                      data-item-image="/assets/images/mug.jpg"
+                      data-item-name="The Mug"
+                      data-item-price="14.99"
+                      data-item-weight="340"
+                      data-item-url="/"
+                      data-item-description="It doesn’t matter what you put in it, as long as you drink it out of this."
+                      >
+                    <span class="btn-title">
+                      Purchase <i class="icon icon-arrow-right">{% include_relative assets/svg/arrow-right.svg %}</i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-commercial">
+                <div class="commercial-btn">
+                  <button class="btn" data-toggle="modal" data-target="#modal-commercial">
+                    <span class="btn-title">
+                      <i class="icon icon-play">
+                        {% include_relative assets/svg/play.svg %}
+                      </i>
+                      Watch the Commercial
+                    </span>
+                  </button>
+                </div>
+                <img src="{{ '/assets/images/bg-mugs-dawn.png' | relative_url }}" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
     <section id="my-work">
       <h2>My Work</h2>
       <div id="grid" data-columns>
@@ -329,6 +386,8 @@
         </div>
       </div>  
     </section>
+    
+    {% include modal-commercial.html %}
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="{{ '/js/util.js' | relative_url }}"></script>
     <script src="{{ '/js/modal.js' | relative_url }}"></script>

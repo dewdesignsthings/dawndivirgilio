@@ -143,6 +143,247 @@ button, input, optgroup, select, textarea {
     }
   }
 }
+#the-mug {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0 0;
+  border-bottom: 20px solid white;
+  box-shadow: 0 0 40px 0 rgba(black,0.15);
+  .container-fluid {
+    max-width: 1600px;
+  }
+  .background {
+    background: #a18d61 url("/assets/images/bg-mugs.jpg") repeat 0 -320px; 
+    background-size: 354px auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+  .tagline {
+    font-family: $font-family-bebas-neue-bold;
+    font-size: 56px;
+    line-height: 58px;
+    color: white;
+    text-transform: uppercase;
+    margin: 15px 0 80px;
+    .title {
+      border: 5px solid white;
+      display: inline-block;
+      padding: 5px 15px;
+      text-shadow: 0 0 5px rgba(black,0.8);
+      box-shadow: 0 0 5px 0 rgba(black,0.8);
+    }
+    @media (max-width: $screen-lg) {
+      text-align: center;
+      font-size: 42px;
+      line-height: 45px;
+      margin-bottom: 30px;
+    }
+  }
+  .thumbnail {
+    .img-fluid {
+      filter: drop-shadow(8px 8px 10px rgba(black,0.2));
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .product-name {
+    font-size: 43px;
+    line-height: 46px;
+    margin: 0 0 15px;
+    color: white;
+    text-shadow: 1px 3px 0px rgba(black,0.6);
+    small {
+      display: block;
+      font-size: 21px;
+      line-height: 23px;
+    }
+  }
+  .product-description {
+    background: white;
+    border-radius: 30px;
+    color: #7f5d21;
+    margin: 0 0 15px;
+    font-size: 24px;
+    line-height: 26px;
+    padding: 20px 30px;
+    position: relative; 
+    margin-bottom: 40px;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 40px;
+      bottom: -20px;
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 2px solid transparent;
+      border-top: 20px solid white;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .col-thumbnail {
+    padding-right: 60px;
+    position: relative;
+    flex: 0 0 400px;
+    .callout {
+      background: url("/assets/images/bg-mugs-callout.png") no-repeat 0 0;  
+      background-size: cover;
+      position: absolute;
+      bottom: 20px;
+      width: 156px;
+      height: 155px;
+      z-index: 2;
+      margin: auto;
+      left: 0;
+      right: -100px;
+      .price {
+        font-family: $font-family-bebas-neue-bold;
+        font-size: 32px;
+        line-height: 31px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 45px 0;
+        color: white;
+        text-shadow: 2px 3px 1px rgba(black,0.5);
+        transform: rotate(-8deg);
+      }
+    }
+    @media (max-width: $screen-lg) {
+      padding-right: 0;
+      flex: 0 0 100%;
+      .img-fluid {
+        max-width: 100%;
+        width: 400px;
+      }
+    }
+  }
+  .col-product {
+    padding-right: 500px;
+    min-height: 400px;
+    @media (max-width: $screen-lg) {
+      padding-right: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+  .col-details {
+    .btn-primary {
+      border: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 23px;
+      position: relative;
+      background: #9d4114;
+      &:hover {
+        color: #9d4114;
+        background: white;
+        .btn-title .icon svg path {
+          fill: #9d4114;
+        }
+      }
+    }
+    .btn-title {
+      position: relative;
+      padding-right: 35px;
+      .icon {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        svg {
+          path {
+            fill: white;
+            transition: all 300ms ease;
+          }
+        }
+      }
+      .icon-arrow-right {
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  .product-btn {
+    margin-right: 80px;
+    @media (max-width: $screen-lg) {
+      margin-right: 0;
+    }
+  }
+  .col-commercial {
+    width: 580px;
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    @media (max-width: $screen-lg) {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .commercial-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    .btn {
+      background: transparent;
+      color: white;
+      font-size: 24px;
+      line-height: 24px;
+      text-shadow: 0px 0px 15px rgba(black,0.9);
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 0;
+      right: -100px;
+      width: 270px;
+      margin: 100px auto 0;
+      cursor: pointer;
+      @media (max-width: $screen-lg) {
+        margin: 20px auto 0;
+        right: 0;
+      }
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0;
+      }
+    }
+    .icon-play {
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      svg {
+        display: block;
+        filter: drop-shadow(0 0px 10px rgba(black,0.9));
+        overflow: visible;
+        path {
+          fill: white;
+        }
+      }
+    }
+    &:hover,
+    &:focus {
+      .icon-play svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
 #my-story {
   .col-story {
     background: $pastelBlue;
@@ -282,6 +523,53 @@ button, input, optgroup, select, textarea {
       font-size: 21px;
       line-height: 26px;
       color: #996699;
+    }
+  }
+}
+.modal-commercial {
+  .modal-header {
+    background: transparent;
+    color: white;
+    border: 0;
+    padding: 0;
+    position: relative;
+    h5 {
+      font-size: 42px;
+      font-weight: 100;
+      line-height: 46px;
+    }
+    .close {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -7px;
+      right: -7px;
+      opacity: 1;
+      z-index: 1;
+      svg {
+        display: block;
+        path {
+          fill: white;
+          transition: all 300ms ease;
+        }
+      }
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+  .modal-content {
+    border: 0;
+    background: transparent;
+  }
+  .modal-body {
+    background: transparent;
+    padding: 0;
+  }
+  .video-commercial {
+    max-width: 100%;
+    @media (min-width: $screen-md) {
+      max-width: 800px;
     }
   }
 }
